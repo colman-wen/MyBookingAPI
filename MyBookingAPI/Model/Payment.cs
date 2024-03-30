@@ -8,6 +8,8 @@
 
         public string PaymentType { get; set; }
 
+        public decimal Amount { get; set; }
+
         public bool Paid { get; set; }
     }
 }

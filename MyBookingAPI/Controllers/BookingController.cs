@@ -29,12 +29,11 @@ namespace MyBookingAPI.Controllers
         }
 
         /// <summary>
-        /// Endpoint to retrieve a list of bookings for the user
+        /// Endpoint to retrieve a list of bookings for the signed-in user
         /// </summary>
-        /// <param name="bookingID">The booking ID</param>
         /// <returns>A list of bookings for the user</returns>
-        [HttpGet("user/{userID}")]
-        public IEnumerable<Booking> GetUserBookings(string userID)
+        [HttpGet]
+        public IEnumerable<Booking> GetUserBookings()
         {
             return new List<Booking>();
         }
