@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MyBookingAPI.Model;
 
 namespace MyBookingAPI.Controllers
@@ -26,13 +27,54 @@ namespace MyBookingAPI.Controllers
         /// </summary>
         /// <param name="userName"></param>
         /// <param name="password"></param>
-        /// <returns>If sign in is susseceful, returns a token</returns>
-        [HttpPost]
-        public SignInResponse SignIn(string userName, string password) {
-            return new SignInResponse
+        /// <returns>If sign in is susseceful, returns a token for authentication</returns>
+        [HttpGet(Name = "SignIn")]
+        [AllowAnonymous]
+        public SignInResponse SignIn(string userName, string password)
+        {
+            var result = new SignInResponse
             {
                 Token = new Guid().ToString()
             };
+            return result;
+        }
+
+        /// <summary>
+        /// Endpoint for user to create an account
+        /// </summary>
+        /// <param name="user">User account information</param>
+        /// <returns>If create is susseceful, returns a token</returns>
+        [HttpPut(Name = "CreateAccount")]
+        [AllowAnonymous]
+        public SignInResponse CreateAccount(User user)
+        {
+            var result = new SignInResponse
+            {
+                Token = new Guid().ToString()
+            };
+            return result;
+        }
+
+        /// <summary>
+        /// Endpoint for user to update an existing account
+        /// </summary>
+        /// <param name="user">User Account Information</param>
+        /// <returns>Response result</returns>
+        [HttpPost(Name = "UpdateAccount")]
+        public Response UpdateAccount(User user)
+        {
+            return new Response();
+        }
+
+        /// <summary>
+        /// Endpoint for user to delete an existing account
+        /// </summary>
+        /// <param name="userID">User Account ID</param>
+        /// <returns>Response result</returns>
+        [HttpDelete(Name = "DeleteAccount")]
+        public Response DeleteAccount(string userID)
+        {
+            return new Response();
         }
     }
 }

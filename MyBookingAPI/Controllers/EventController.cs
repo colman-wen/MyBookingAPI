@@ -20,9 +20,10 @@ namespace MyBookingAPI.Controllers
             _logger = logger;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
+        [HttpGet(Name = "GetEvent")]
         public IEnumerable<Event> Get()
         {
-
+            return new List<Event>();
         }
+    }
     }
