@@ -43,15 +43,12 @@ namespace MyBookingAPI.Controllers
         /// Endpoint for user to create an account
         /// </summary>
         /// <param name="user">User account information</param>
-        /// <returns>If create is susseceful, returns a token</returns>
+        /// <returns>If create is susseceful, returns the user information</returns>
         [HttpPost(Name = "CreateAccount")]
         [AllowAnonymous]
-        public SignInResponse CreateAccount(User user)
+        public User CreateAccount(User user)
         {
-            var result = new SignInResponse
-            {
-                Token = new Guid().ToString()
-            };
+            var result = user;
             return result;
         }
 
@@ -61,9 +58,9 @@ namespace MyBookingAPI.Controllers
         /// <param name="user">User Account Information</param>
         /// <returns>Response result</returns>
         [HttpPut(Name = "UpdateAccount")]
-        public Response UpdateAccount(User user)
+        public User UpdateAccount(User user)
         {
-            return new Response();
+            return user;
         }
 
         /// <summary>
