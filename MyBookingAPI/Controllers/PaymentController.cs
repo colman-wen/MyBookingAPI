@@ -44,9 +44,9 @@ namespace MyBookingAPI.Controllers
         /// <param name="paymentID">The Payment ID</param>
         /// <returns>A specific booking if found</returns>
         [HttpGet("{paymentID}")]
-        public Booking GetPayment(string paymentID)
+        public Payment GetPayment(string paymentID)
         {
-            return new Booking();
+            return new Payment();
         }
     }
 }
