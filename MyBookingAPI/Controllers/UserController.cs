@@ -44,7 +44,7 @@ namespace MyBookingAPI.Controllers
         /// </summary>
         /// <param name="user">User account information</param>
         /// <returns>If create is susseceful, returns a token</returns>
-        [HttpPut(Name = "CreateAccount")]
+        [HttpPost(Name = "CreateAccount")]
         [AllowAnonymous]
         public SignInResponse CreateAccount(User user)
         {
@@ -60,7 +60,7 @@ namespace MyBookingAPI.Controllers
         /// </summary>
         /// <param name="user">User Account Information</param>
         /// <returns>Response result</returns>
-        [HttpPost(Name = "UpdateAccount")]
+        [HttpPut(Name = "UpdateAccount")]
         public Response UpdateAccount(User user)
         {
             return new Response();
