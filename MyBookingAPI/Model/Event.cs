@@ -1,6 +1,5 @@
 ﻿namespace MyBookingAPI.Model
 {
-
     /// <summary>
     /// Model for an event
     /// </summary>
@@ -19,7 +18,7 @@
         /// <summary>
         /// Price for each ticket
         /// </summary>
-        public decimal Price { get; set; } = 0;
+        public Dictionary<EventType, decimal> Prices { get; set; }
 
         /// <summary>
         /// Number of available tickets
