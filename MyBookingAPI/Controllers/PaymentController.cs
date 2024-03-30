@@ -42,7 +42,7 @@ namespace MyBookingAPI.Controllers
         /// Endpoint to retrieve a specific Payment
         /// </summary>
         /// <param name="paymentID">The Payment ID</param>
-        /// <returns>A specific booking if found</returns>
+        /// <returns>The specific payment if found</returns>
         [HttpGet("{paymentID}")]
         public Payment GetPayment(string paymentID)
         {

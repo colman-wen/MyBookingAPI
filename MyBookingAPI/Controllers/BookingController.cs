@@ -21,7 +21,7 @@ namespace MyBookingAPI.Controllers
         /// Endpoint to retrieve a specific booking
         /// </summary>
         /// <param name="bookingID">The booking ID</param>
-        /// <returns>A specific booking if found</returns>
+        /// <returns>The specific booking if found</returns>
         [HttpGet("{bookingID}")]
         public Booking GetBooking(string bookingID)
         {
