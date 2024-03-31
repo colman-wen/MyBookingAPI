@@ -8,6 +8,10 @@ namespace MyBookingAPI.Controllers
     [ApiController]
     public class ErrorController : ControllerBase
     {
+        /// <summary>
+        /// Error handling endpoint
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Get()
         {
