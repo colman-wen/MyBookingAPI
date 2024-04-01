@@ -624,14 +624,17 @@
         "properties": {
           "userID": {
             "type": "string",
+            "description": "The User ID who books the tickets",
             "nullable": true
           },
           "bookingID": {
             "type": "string",
+            "description": "A unique ID for this Booking. Value can be assigned after Booking has been placed against the event",
             "nullable": true
           },
           "eventID": {
             "type": "string",
+            "description": "The ID of event to be booked for the user",
             "nullable": true
           },
           "counts": {
@@ -640,35 +643,43 @@
               "type": "integer",
               "format": "int32"
             },
+            "description": "Counts the number of tickets to be booked with each Event Type",
             "nullable": true
           },
           "paid": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether a Payment has been made against this Booking"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "A model to record when a user book tickets for a event"
       },
       "Event": {
         "type": "object",
         "properties": {
-          "id": {
+          "eventId": {
             "type": "string",
+            "description": "A unique Identifier for each Event",
             "nullable": true
           },
           "name": {
             "type": "string",
+            "description": "The Event Name",
             "nullable": true
           },
           "date": {
             "type": "string",
+            "description": "The Date of when the Event will take place",
             "format": "date-time"
           },
           "time": {
             "type": "string",
+            "description": "The time of when the Event will happen",
             "format": "date-time"
           },
           "venue": {
             "type": "string",
+            "description": "The location of where the event will take place",
             "nullable": true
           },
           "prices": {
@@ -677,12 +688,12 @@
               "type": "number",
               "format": "double"
             },
-            "description": "Price for each ticket",
+            "description": "Price for a ticket under each Event Type",
             "nullable": true
           },
           "availibility": {
             "type": "integer",
-            "description": "Number of available tickets",
+            "description": "Number of available tickets left",
             "format": "int32"
           }
         },
@@ -694,79 +705,102 @@
         "properties": {
           "paymentID": {
             "type": "string",
+            "description": "A unique identifier for a Payment",
             "nullable": true
           },
           "bookingID": {
             "type": "string",
+            "description": "The ID of Booking to be paid",
             "nullable": true
           },
           "paymentType": {
             "type": "string",
+            "description": "Payment type of how the payment is made",
             "nullable": true
           },
           "amount": {
             "type": "number",
+            "description": "The total amount to be paid for the Booking",
             "format": "double"
           },
+          "currency": {
+            "type": "string",
+            "description": "The Currency of payment to be paid",
+            "nullable": true
+          },
           "paid": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether the Payment has been completed"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Model for a Ticket Payment"
       },
       "Response": {
         "type": "object",
         "properties": {
           "message": {
             "type": "string",
+            "description": "Message of the response",
             "nullable": true
           },
           "status": {
             "type": "integer",
+            "description": "Error Code of the response. 0 means successful",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Model of responds for a request"
       },
       "SignInResponse": {
         "type": "object",
         "properties": {
           "message": {
             "type": "string",
+            "description": "Message of the response",
             "nullable": true
           },
           "status": {
             "type": "integer",
+            "description": "Error Code of the response. 0 means successful",
             "format": "int32"
           },
           "token": {
             "type": "string",
+            "description": "Access token for a successful sign-in",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Model of responds for a sign in request"
       },
       "User": {
         "type": "object",
         "properties": {
           "userID": {
             "type": "string",
+            "description": "A unique identifier of a User",
             "nullable": true
           },
           "userName": {
             "type": "string",
+            "description": "Name of the User",
             "nullable": true
           },
           "userEmail": {
             "type": "string",
+            "description": "Email of the User",
             "nullable": true
           },
           "password": {
             "type": "string",
+            "description": "Password of the User",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Model for a User"
       }
     }
   }
