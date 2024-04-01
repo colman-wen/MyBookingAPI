@@ -1,7 +1,13 @@
 ﻿namespace MyBookingAPI.Model
 {
+    /// <summary>
+    /// Model of responds for a sign in request
+    /// </summary>
     public class SignInResponse: Response
     {
-        public string Token { get; set; }
+        /// <summary>
+        /// Access token for a successful sign-in
+        /// </summary>
+        public string? Token { get; set; }
     }
 }

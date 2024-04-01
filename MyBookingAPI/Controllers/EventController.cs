@@ -4,6 +4,9 @@ using MyBookingAPI.Model;
 
 namespace MyBookingAPI.Controllers
 {
+    /// <summary>
+    /// Controller to handle Events
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     [AllowAnonymous]
@@ -11,6 +14,10 @@ namespace MyBookingAPI.Controllers
     {
         private readonly ILogger<EventController> _logger;
 
+        /// <summary>
+        /// Constructor with Logger
+        /// </summary>
+        /// <param name="logger"></param>
         public EventController(ILogger<EventController> logger)
         {
             _logger = logger;

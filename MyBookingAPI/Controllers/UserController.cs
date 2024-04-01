@@ -4,6 +4,9 @@ using MyBookingAPI.Model;
 
 namespace MyBookingAPI.Controllers
 {
+    /// <summary>
+    /// Controller to handle Users
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase

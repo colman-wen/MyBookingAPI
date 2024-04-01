@@ -4,10 +4,24 @@ using MyBookingAPI.Model;
 
 namespace MyBookingAPI.Controllers
 {
+    /// <summary>
+    /// Controller to handle errors and exceptions
+    /// </summary>
     [Route("[controller]")]
     [ApiController]
     public class ErrorController : ControllerBase
     {
+        private readonly ILogger<ErrorController> _logger;
+
+        /// <summary>
+        /// Constructor with Logger
+        /// </summary>
+        /// <param name="logger"></param>
+        internal ErrorController(ILogger<ErrorController> logger)
+        {
+            _logger = logger;
+        }
+
         /// <summary>
         /// Error handling endpoint
         /// </summary>

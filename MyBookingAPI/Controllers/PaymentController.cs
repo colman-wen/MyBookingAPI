@@ -5,6 +5,9 @@ using MyBookingAPI.Model;
 
 namespace MyBookingAPI.Controllers
 {
+    /// <summary>
+    /// Controller to handle Payments
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
@@ -12,6 +15,10 @@ namespace MyBookingAPI.Controllers
     {
         private readonly ILogger<PaymentController> _logger;
 
+        /// <summary>
+        /// Constructor with Logger
+        /// </summary>
+        /// <param name="logger"></param>
         public PaymentController(ILogger<PaymentController> logger)
         {
             _logger = logger;
